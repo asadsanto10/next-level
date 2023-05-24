@@ -5,7 +5,7 @@ import { getAdminUsersDB, getUserByIdDB } from '../../services/userService/user.
 
 export const createUser = async (req: Request, res: Response) => {
 	try {
-		const data: Iuser = req.body;
+		const data = req.body as Iuser;
 
 		const user = new User(data);
 		await user.save();
